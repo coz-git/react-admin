@@ -17,45 +17,19 @@ const Content = () => {
     }, [])
 
     let getData = () => {
-        Axios.get('http://localhost:5000/get_karyawan')
-            .then(function (response) {
-                // handle success
-                setDataKaryawan(response.data)
-            })
-            .catch(function (error) {
-                // handle error
-                console.log(error);
-            })
+        // console.log('getData')
     }
 
     let submitHandler = () => {
         if (action == 'add') {
-            Axios.post('http://localhost:5000/add_karyawan', form)
-                .then(function (response) {
-                    getData()
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+            // console.log('add')
         } else if (action == 'update') {
-            Axios.post('http://localhost:5000/update_karyawan', form)
-                .then(function (response) {
-                    getData()
-                })
-                .catch(function (error) {
-                    console.log(error);
-                });
+            // console.log('update')
         }
     }
 
     let deleteHandler = (id) => {
-        Axios.post('http://localhost:5000/delete_karyawan/' + id)
-            .then(function (response) {
-                getData()
-            })
-            .catch(function (error) {
-                console.log(error);
-            });
+        // console.log('delete')
     }
 
     let updateHandler = (item) => {
